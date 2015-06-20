@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
+    <persistence-unit name="introsde-jpa">
+<class>projsde.rest.model.Activitygoal</class>
+    	<class>projsde.rest.model.ActivitygoalPK</class>
+    	<class>projsde.rest.model.Healthprofile</class>
+    	<class>projsde.rest.model.HealthprofilePK</class>
+    	<class>projsde.rest.model.Healthprofilegoal</class>
+    	<class>projsde.rest.model.HealthprofilegoalPK</class>
+    	<class>projsde.rest.model.Healthymeasure</class>
+    	<class>projsde.rest.model.Hhealthprofile</class>
+    	<class>projsde.rest.model.HhealthprofilePK</class>
+    	<class>projsde.rest.model.Measurementdefinition</class>
+    	<class>projsde.rest.model.Motivationalphras</class>
+    	<class>projsde.rest.model.Personalactivity</class>
+    	<class>projsde.rest.model.PersonalactivityPK</class>
+    	<class>projsde.rest.model.Personprofile</class>
+    	<class>projsde.rest.model.Reminder</class>
+    	<class>projsde.rest.model.ReminderPK</class>
+        <properties>
+            <!-- the jdbc driver we will use to connect to the database 
+                 change it depending of what database you use -->
+            <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/virtualcoachdb"/>
+            <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/>      
+            <property name="javax.persistence.jdbc.password" value="root"/>
+            <property name="javax.persistence.jdbc.user" value="root"/>
+           
+            <!-- the last part of the url is the path to the sqlite file of the db, in this case it should be
+                 on the root folder of the project -->
+    
+                <!-- set it to ALL to see all the JPA related debugging information --> 
+            <property name="eclipselink.logging.level" value="INFO" />
+            
+            <!-- Scan for annotated classes and Hibernate mapping XML files -->
+			<property name="hibernate.archive.autodetection" value="class, hbm" />
+			<property name="eclipselink.ddl-generation" value="none" />    
+            
+            
+            
+            
+            <!-- we will use this to automatically add elements to our database if we modify the Java model 
+            <property name="eclipselink.ddl-generation" value="create-or-extend-tables" />-->
+            <!-- it means that automatic changes will be directly applied to the database
+                 this is not reccommended, but we will use it as example only  
+            <property name="eclipselink.ddl-generation.output-mode" value="database"/> --> 
+        </properties>
+    </persistence-unit>
+</persistence>
